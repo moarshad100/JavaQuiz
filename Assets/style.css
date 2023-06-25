@@ -1,0 +1,31 @@
+h1{
+	
+	
+}
+
+#start{
+  background-color: purple;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  border-radius: 5px;
+  align-self: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+
+}
+
+p{
+	font-size: 20px;
+	text-align: center;
+	
+}
+
+.main{
+margin: auto;
+  width: 50%;
+  border: 3px solid #008CBA;
+  padding: 10px;
+  align-content: center;
+}
