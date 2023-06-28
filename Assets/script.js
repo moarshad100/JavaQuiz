@@ -15,6 +15,12 @@ var i = 0;
 var timeLeft = 75;
 
 
+
+
+
+
+
+
 //Create a variable for the questions
 
 const allQuestions = [
@@ -135,6 +141,8 @@ function displayLastPage() {
   }
   endscreenScoreText.textContent = "your final score is: " + finalscore;
   console.log(finalscore);
+
+  // Local Storage
   submitButton.addEventListener("click", function () {
     localStorage.setItem("score", JSON.stringify(finalscore));
     localStorage.setItem("initials", JSON.stringify(textArea.value));
@@ -144,6 +152,10 @@ function displayLastPage() {
   })
 }
 
+function addScore(score) {
+  testHighScore.push(score);
+  localStorage.setItem("highScores", JSON.stringify(testHighScore));
+}
 
 q1El.addEventListener("click", function (event) {
   checkAnswer();
@@ -180,3 +192,4 @@ function checkIfTimeOut() {
     clearInterval(myInterval);
   }
 }
+
