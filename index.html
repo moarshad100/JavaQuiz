@@ -7,22 +7,45 @@
 	<link rel="stylesheet" type="text/css" href="assets/style.css">
 </head>
 <body>
-	<div><a href="highscores.html"> View highscores</a></div>
+	<div><a href="./assets/highscores.html"> View highscores</a></div>
 	<div class = "main start-screen">
 		<h1>Coding Quiz Challenge</h1>
 		<p> Try to answer the following code related questions within the time limit. Keep in mind that incorrect answers will penalize your score/time by ten seconds</p>
 		<button class= "btn" id= "start"> Start quiz</button>
 			</div>
-		<div class = "main hide questions ">
-		<h1 ></h1>
-		<button id="Q1" class = "btn" ></button>
-		<button id="Q2" class = "btn" ></button>
-		<button id="Q3" class = "btn" ></button>
-		<button id="Q4" class = "btn" ></button>
 
-		<p class = "result"></p>
+	<div class = "main hide questions ">
+		<h1 ></h1>
+		<ol>
+		<li>
+		<button id="Q1" class = "btn" ></button></li>
+		<li>
+		<button id="Q2" class = "btn" ></button></li>
+		<li>
+		<button id="Q3" class = "btn" ></button></li>
+		<li>
+		<button id="Q4" class = "btn" ></button>
+		</li>
+		<ol>
 	</div>
-	<div class = "timer"></div>
+	<section class = "main end-screen hide">
+		<h1></h1>
+		<h3></h3>
+		<div class = "submission">
+			<h3 class="flexitem">Enter Initials:</h3>
+			<textarea class="nameText flexitem"></textarea>
+			<button class="btn submitBtn flexitem">Submit</button>
+		</div>
+	</section>
+
+
+	<h4 class = "result"></h4>
+	
+	<div class = "timer">
+		
+	</div>
+
+
 
 	
 	
