@@ -131,7 +131,7 @@ function displayLastPage() {
 
   endscreenText.textContent = "All Done!";
   const textArea = document.querySelector(".nameText");
-  var finalscore;
+  var finalscore[];
 
   if (timeLeft > 0) {
     finalscore = timeLeft;
