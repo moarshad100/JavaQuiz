@@ -119,7 +119,6 @@ function checkAnswer(){
 function displayLastPage() {
   endscreenText.textContent = "All Done!";
   var finalscore;
-  const textArea = document.querySelector(".nameText");
   if(timeLeft >0){
     finalscore = timeLeft;
   }
