@@ -11,11 +11,11 @@ var endScreenEl = document.querySelector(".end-screen");
 var endscreenText = document.querySelector(".end-screen h1");
 var endscreenScoreText = document.querySelector(".end-screen h3");
 var submitButton = document.querySelector(".submitBtn");
-var i=0;
+var i = 0;
 var timeLeft = 75;
 
 
-
+//Create a variable for the questions
 
 const allQuestions = [
   {
@@ -24,7 +24,7 @@ const allQuestions = [
       a: "strings",
       b: "booleans",
       c: "alerts",
-      d:"numbers"
+      d: "numbers"
     },
     correctAnswer: "strings"
   },
@@ -34,7 +34,7 @@ const allQuestions = [
       a: "quotes",
       b: "curly brackets",
       c: "paranthesis",
-      d:"square brackets"
+      d: "square brackets"
     },
     correctAnswer: "curly brackets"
   },
@@ -44,7 +44,7 @@ const allQuestions = [
       a: "number and strings",
       b: "other arrays",
       c: "booleans",
-      d:"all of the above"
+      d: "all of the above"
     },
     correctAnswer: "all of the above"
   },
@@ -54,7 +54,7 @@ const allQuestions = [
       a: "commas",
       b: "curly brackets",
       c: "quotes",
-      d:"paranthesis"
+      d: "paranthesis"
     },
     correctAnswer: "quotes"
   },
@@ -64,21 +64,23 @@ const allQuestions = [
       a: "JavaScript",
       b: "terminal/bash",
       c: "for loops",
-      d:"console.log"
+      d: "console.log"
     },
     correctAnswer: "console.log"
   }];
 
-
-startClick.addEventListener("click",function(){
-	var startScreenEl = document.querySelector('.start-screen');
-	startScreenEl.setAttribute('class','hide');
-	questionsEL.classList.remove("hide");
+//Start Quiz
+startClick.addEventListener("click", function () {
+  const myInterval = setInterval(myTimer, 1000);
+  var startScreenEl = document.querySelector('.start-screen');
+  startScreenEl.setAttribute('class', 'hide');
+  questionsEL.classList.remove("hide");
   displayQuestions();
 });
 
-function displayQuestions (){
-  
+//Questions are displayed
+function displayQuestions() {
+
   var question1 = allQuestions[i];
   questionText.textContent = question1.question;
   q1El.textContent = question1.answers.a;
@@ -88,23 +90,25 @@ function displayQuestions (){
 
 }
 
-function checkAnswer(){
+
+//Check if the answers are right
+function checkAnswer() {
   console.log(event.target.textContent);
-  var choice =  event.target.textContent;
+  var choice = event.target.textContent;
   console.log(allQuestions[i].correctAnswer);
   var selectedAnswer = allQuestions[i].correctAnswer;
-  if(choice === selectedAnswer){
+  if (choice === selectedAnswer) {
     console.log("correct");
     resultEl.textContent = "Correct Answer";
   }
-  else{
+  else {
     console.log("incorrect");
     resultEl.textContent = "Incorrect Answer";
     timeLeft -= 15;
   }
   i++;
-  if(i>4){
-    questionsEL.setAttribute('class','hide');
+  if (i > 4) {
+    questionsEL.setAttribute('class', 'hide');
     endScreenEl.classList.remove("hide");
     var score = timeLeft;
     displayLastPage();
@@ -115,73 +119,64 @@ function checkAnswer(){
 
 }
 
-
+//Once all the questions are answered go to the last Page
 function displayLastPage() {
+  timerEl.setAttribute("class", "hide");
+
   endscreenText.textContent = "All Done!";
-  const textArea = document.querySelector(".nameText") ;
+  const textArea = document.querySelector(".nameText");
   var finalscore;
 
-  if(timeLeft >0){
+  if (timeLeft > 0) {
     finalscore = timeLeft;
   }
-  else{
+  else {
     finalscore = 0;
   }
   endscreenScoreText.textContent = "your final score is: " + finalscore;
   console.log(finalscore);
-  submitButton.addEventListener("click",function(){
-  // localStorage.setItem("score", finalscore);
-  // localStorage.setItem("initials",textArea.value);
+  submitButton.addEventListener("click", function () {
+    localStorage.setItem("score", JSON.stringify(finalscore));
+    localStorage.setItem("initials", JSON.stringify(textArea.value));
+    document.location = "index.html";
 
 
-})
+  })
 }
 
 
-q1El.addEventListener("click",function(event){
+q1El.addEventListener("click", function (event) {
   checkAnswer();
-  
+
 })
-q2El.addEventListener("click",function(event){
+q2El.addEventListener("click", function (event) {
   checkAnswer();
-  
+
 })
-q3El.addEventListener("click",function(event){
+q3El.addEventListener("click", function (event) {
   checkAnswer();
-  
+
 })
-q4El.addEventListener("click",function(event){
+q4El.addEventListener("click", function (event) {
   checkAnswer();
-  
+
 })
 
-/*
-function setTime(){
-	var TimerInterval = setInterval(function(){
-		timeLeft--;
-		timerEl.textContent = "time :" + timeLeft ;
-		if(timeLeft <= 0){
-			clearInterval();
-      return;
-		}
-	}, 1000);
-}
-
-*/
 
 
-const myInterval = setInterval(myTimer, 1000);
+//create a timer function so the timer can start running once the game starts
 
 function myTimer() {
   timeLeft--;
-  timerEl.textContent = "time :" + timeLeft ;
+  timerEl.textContent = "time :" + timeLeft;
   checkIfTimeOut();
-  }
+}
 
+//check if the time is still left
 function checkIfTimeOut() {
   console.log("stop function");
-  if(timeLeft === 0){
+  if (timeLeft === 0) {
     console.log("no time Left");
-      clearInterval(myInterval);
-    }
+    clearInterval(myInterval);
+  }
 }

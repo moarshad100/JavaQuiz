@@ -1,9 +1,4 @@
-h1{
-	
-	
-}
-
-.btn{
+.btn {
   background-color: purple;
   border: none;
   color: white;
@@ -16,13 +11,13 @@ h1{
 
 }
 
-p{
-	font-size: 20px;
-	text-align: center;
-	
+p {
+  font-size: 20px;
+  text-align: center;
+
 }
 
-.main{
+.main {
   margin: auto;
   width: 50%;
   border: 3px solid #008CBA;
@@ -30,19 +25,19 @@ p{
   align-content: center;
 }
 
-.hide{
-	display: none;
+.hide {
+  display: none;
 }
 
-.submission{
+.submission {
   display: flex;
 
 }
 
-textarea{
-font-size: 30px;
+textarea {
+  font-size: 30px;
 }
 
-.flexitem{
+.flexitem {
   margin-left: 5px;
 }
