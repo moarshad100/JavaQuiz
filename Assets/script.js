@@ -118,7 +118,9 @@ function checkAnswer(){
 
 function displayLastPage() {
   endscreenText.textContent = "All Done!";
+  const textArea = document.querySelector(".nameText") ;
   var finalscore;
+
   if(timeLeft >0){
     finalscore = timeLeft;
   }
@@ -128,7 +130,9 @@ function displayLastPage() {
   endscreenScoreText.textContent = "your final score is: " + finalscore;
   console.log(finalscore);
   submitButton.addEventListener("click",function(){
-  localStorage.setItem("score", finalscore);
+  // localStorage.setItem("score", finalscore);
+  // localStorage.setItem("initials",textArea.value);
+
 
 })
 }
