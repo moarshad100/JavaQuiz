@@ -28,4 +28,4 @@ This week my task is to create a Quiz by making use of JavaScript
 ## URL
 
 Github Repository: https://github.com/moarshad100/RocketJavaQuiz
-Github Link : 
+Github Link : https://moarshad100.github.io/RocketJavaQuiz/
